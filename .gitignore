@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment & Local Secrets
+.env
+.env.local
+.env.*.local
+
+# IDE & Tooling
+.vscode/
+.idea/
+.impeccable/
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & Databases
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.db
+ruvector.db
+
+# Temporary & Build Assets
+dist/
+build/
+.cache/
+frames/
+
+# Raw Root Video Assets (production videos are in public/)
+Woman_*.mp4
+WhatsApp Image*
+*.docx
+*.pdf
+

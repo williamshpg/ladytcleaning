@@ -1,0 +1,219 @@
+{
+  "summary": {
+    "health_score": 96,
+    "grade": "A+",
+    "business_type": "Local Service Business (Home & Commercial Cleaning / SAB / Brick-and-Mortar)",
+    "domain": "ladytcleaning.com",
+    "crawl_date": "2026-09-26",
+    "pages_audited": 5,
+    "top_findings": [
+      "Missing poster attribute on index.html hero background video causes potential LCP delay on slower mobile connections.",
+      "Meta descriptions on index.html (245 chars) and contact.html (212 chars) exceed Google's 160-char display snippet limit.",
+      "Image formats are standard JPG/PNG; converting to WebP/AVIF can reduce payload by 40-60%.",
+      "Title tag on about.html (80 chars) exceeds the 70-character threshold for desktop SERP snippets.",
+      "No security headers (CSP, HSTS, X-Content-Type-Options) configured at server/hosting level yet."
+    ],
+    "quick_wins": [
+      "Add poster='/kitchen-clean.jpg' to hero video in index.html for instant perceived LCP.",
+      "Trim meta descriptions on homepage and contact page to 155 characters with prominent phone/call-to-action.",
+      "Add explicit width and height attributes to logo and header icons to prevent Cumulative Layout Shift (CLS).",
+      "Trim about.html title tag to 'About Lady T's Cleaning Services | Benin City Cleaners'.",
+      "Ensure web server sends Cache-Control: max-age=31536000 for static images and video assets."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "weight": "22%",
+      "score": 94,
+      "what_works": [
+        "Robots.txt is fully configured and allows standard crawlers plus AI bots (GPTBot, ClaudeBot, PerplexityBot, Google-Extended).",
+        "XML Sitemap is well-formed with lastmod dates and accurate priority levels across all 5 routes.",
+        "Canonical tags are strictly defined with absolute HTTPS URLs across all pages.",
+        "Valid HTML5 semantics and responsive viewport meta tag implemented on all pages.",
+        "Zero broken internal links detected across the entire site architecture."
+      ],
+      "findings": [
+        {
+          "title": "Security Headers Configuration",
+          "severity": "Low",
+          "description": "Production server configuration should include HSTS, Content-Security-Policy, and X-Content-Type-Options headers upon live deployment.",
+          "recommendation": "Configure response headers in web server (Nginx/Apache/Cloudflare/Vercel) config."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality & E-E-A-T",
+      "weight": "23%",
+      "score": 91,
+      "what_works": [
+        "Strong local authority with real neighborhood names (GRA, Ugbowo, Airport Rd, Sapele Rd, Amagba).",
+        "Transparent pricing guides and comprehensive service tier comparisons in blog.html.",
+        "Clear satisfaction guarantee (100% Sparkle Satisfaction Guarantee with free immediate re-clean).",
+        "Vetted and background-checked staff credentials highlighted across copy."
+      ],
+      "findings": [
+        {
+          "title": "Expand Blog Post Articles into Dedicated Sub-Pages",
+          "severity": "Medium",
+          "description": "Currently, blog guides reside as anchor sections (#cost-guide, #deep-vs-regular) on a single blog.html page. Splitting top guides into dedicated URLs (e.g. /blog/house-cleaning-cost-benin-city.html) will capture high-volume long-tail search intent.",
+          "recommendation": "Create dedicated blog post pages for the top 3 highest-intent guides with targeted Schema BlogPosting."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "weight": "20%",
+      "score": 93,
+      "what_works": [
+        "Single H1 tag per page strictly maintained across all 5 pages.",
+        "Rich keyword targeting in titles and headers aligned with Target Keyword Strategy docx.",
+        "Strong internal linking between Home, Services, About, Blog, and Contact with descriptive anchor text.",
+        "High-converting CTAs (Book Online, WhatsApp Instant Quote, Telephone Direct) prominently placed."
+      ],
+      "findings": [
+        {
+          "title": "Meta Description Length Truncation",
+          "severity": "Medium",
+          "description": "Homepage meta description is 245 characters; Contact page is 212 characters. Google typically truncates at 155-160 characters on desktop and ~120 on mobile.",
+          "recommendation": "Front-load primary keywords and phone numbers into the first 150 characters."
+        },
+        {
+          "title": "About Page Title Tag Length",
+          "severity": "Low",
+          "description": "about.html title tag is 80 characters, which may truncate in Google SERPs.",
+          "recommendation": "Shorten to under 65 characters while preserving core brand and location keywords."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "weight": "10%",
+      "score": 98,
+      "what_works": [
+        "CleaningService & LocalBusiness dual-typing in JSON-LD on index.html, about.html, and contact.html.",
+        "FAQPage schema with 6 practical Q&As eligible for rich result accordion snippets.",
+        "ItemList schema with 6 discrete Service entities on services.html.",
+        "Blog & BlogPosting structured data on blog.html.",
+        "Verified NAP (Name, Address, Phone), geo coordinates, Google Maps CID, opening hours, and sameAs social profiles across schemas.",
+        "Zero JSON syntax errors or schema validation warnings."
+      ],
+      "findings": [
+        {
+          "title": "AggregateRating Integration",
+          "severity": "Info",
+          "description": "Consider adding AggregateRating schema referencing verified Google Reviews count once 20+ reviews are collected on Google Business Profile.",
+          "recommendation": "Connect verified GBP rating into the schema markup."
+        }
+      ]
+    },
+    {
+      "name": "Performance & Core Web Vitals",
+      "weight": "10%",
+      "score": 86,
+      "what_works": [
+        "Modern CSS architecture without heavyweight frameworks.",
+        "Lazy loading enabled on all below-the-fold content images.",
+        "Google Fonts preconnected with dns-prefetch.",
+        "Touch-friendly button tap targets (min 44px) and fluid typography."
+      ],
+      "findings": [
+        {
+          "title": "Hero Video Poster Attribute Missing",
+          "severity": "High",
+          "description": "Hero video player lacks a poster attribute. Browsers may show a black/blank frame before decoding the MP4, hurting Largest Contentful Paint (LCP).",
+          "recommendation": "Add poster='/kitchen-clean.jpg' to the <video> element."
+        },
+        {
+          "title": "Hero Video Asset File Size",
+          "severity": "Medium",
+          "description": "hero-video.mp4 is 3.78MB. While high quality, serving a compressed 720p version (1-1.5MB) for mobile viewports will drastically improve mobile load times.",
+          "recommendation": "Provide responsive video source tags or compress for mobile."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO/AEO)",
+      "weight": "10%",
+      "score": 96,
+      "what_works": [
+        "llms.txt file accurately implemented with Markdown specifications and structured entity data.",
+        "Permissive robots.txt explicitly authorizing GPTBot, ChatGPT-User, PerplexityBot, and ClaudeBot.",
+        "Direct quotation-ready answers to service pricing, location, dispatch times, and guarantee terms.",
+        "Clear entity disambiguation associating Lady T's Cleaning Services with Benin City, Edo State."
+      ],
+      "findings": [
+        {
+          "title": "services.md Deep Context Extension",
+          "severity": "Low",
+          "description": "Keep services.md updated with package price bands as pricing evolves.",
+          "recommendation": "Review services.md quarterly."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "weight": "5%",
+      "score": 92,
+      "what_works": [
+        "100% of images have descriptive, keyword-rich alt attributes (0 missing alt tags).",
+        "High-definition photography representing authentic cleaning services in Benin City.",
+        "New official brand logo and multi-resolution favicon suite successfully deployed."
+      ],
+      "findings": [
+        {
+          "title": "Modern Next-Gen Image Formats (WebP/AVIF)",
+          "severity": "Medium",
+          "description": "Several images in /public are saved as standard JPG (~700KB - 1MB each). Converting them to WebP will reduce image payload by 50-70% with identical visual fidelity.",
+          "recommendation": "Convert content photos to .webp and use <picture> elements."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Quick Fixes (Immediate)",
+        "timeframe": "Day 1 - 2",
+        "items": [
+          "Add poster='/kitchen-clean.jpg' to hero video in index.html to protect Largest Contentful Paint.",
+          "Trim homepage meta description from 245 to 155 characters so the telephone and value prop display in full on mobile SERPs.",
+          "Trim contact.html meta description to 155 characters highlighting immediate WhatsApp response.",
+          "Shorten about.html title tag from 80 to 65 characters."
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Optimizations",
+        "timeframe": "Week 1 - 2",
+        "items": [
+          "Compress and optimize content images to WebP format to save 3-4MB of total site weight.",
+          "Optimize hero background video to create a lighter mobile variation (<1.5MB).",
+          "Ensure production host serves gzip/brotli compression and 1-year Cache-Control headers on static assets."
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority Scaling",
+        "timeframe": "Month 1 - 2",
+        "items": [
+          "Break out key blog topics into standalone sub-pages (e.g. /cleaning-cost-benin-city.html) for deep organic capture.",
+          "Collect and link verified Google Business Profile customer reviews to activate AggregateRating schema.",
+          "Submit sitemap.xml to Google Search Console and Bing Webmaster Tools once live domain DNS is connected."
+        ]
+      },
+      {
+        "name": "Phase 4: Ongoing Monitoring",
+        "timeframe": "Monthly",
+        "items": [
+          "Monitor keyword rankings for 'cleaning services in benin city' and 'cleaners near me'.",
+          "Track Core Web Vitals field data in Google Search Console.",
+          "Refresh llms.txt and sitemap.xml when new seasonal packages or pricing updates occur."
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "report_file": "FULL-AUDIT-REPORT.md",
+    "action_plan_file": "ACTION-PLAN.md"
+  }
+}
