@@ -585,10 +585,20 @@ function setupBookingModal() {
     dateInput.value = tomorrow.toISOString().split('T')[0];
   }
 
-  window.openBookingModal = (serviceType = 'residential') => {
+  window.openBookingModal = (serviceType = '') => {
     if (modal) {
       if (serviceSelect && serviceType) {
         serviceSelect.value = serviceType;
+        if (!serviceSelect.value) {
+          const lower = serviceType.toLowerCase();
+          for (let i = 0; i < serviceSelect.options.length; i++) {
+            const opt = serviceSelect.options[i];
+            if (opt.value.toLowerCase().includes(lower) || opt.text.toLowerCase().includes(lower)) {
+              serviceSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
       }
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -625,23 +635,41 @@ function setupBookingModal() {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('book-name')?.value || document.getElementById('bm-name')?.value || 'Valued Client';
-      const phone = document.getElementById('book-phone')?.value || document.getElementById('bm-phone')?.value || '';
-      const area = document.getElementById('book-address')?.value || document.getElementById('book-zip')?.value || document.getElementById('bm-area')?.value || 'Benin City';
-      const service = document.getElementById('book-service')?.value || document.getElementById('bm-service')?.value || 'Cleaning Service';
-      const notes = document.getElementById('book-notes')?.value || document.getElementById('bm-notes')?.value || '';
+
+      const name = (document.getElementById('bm-name')?.value || document.getElementById('book-name')?.value || 'Valued Client').trim();
+      const phone = (document.getElementById('bm-phone')?.value || document.getElementById('book-phone')?.value || '').trim();
+      const area = (document.getElementById('bm-area')?.value || document.getElementById('book-address')?.value || document.getElementById('book-zip')?.value || 'Benin City').trim();
+
+      const serviceSelect = document.getElementById('bm-service') || document.getElementById('book-service');
+      const service = serviceSelect?.options[serviceSelect.selectedIndex]?.text?.trim() || serviceSelect?.value?.trim() || 'Cleaning Service';
+
+      const notes = (document.getElementById('bm-notes')?.value || document.getElementById('book-notes')?.value || '').trim();
+      const date = document.getElementById('book-date')?.value?.trim() || '';
+      const timeSelect = document.getElementById('book-time');
+      const time = timeSelect && timeSelect.selectedIndex > 0 ? timeSelect.options[timeSelect.selectedIndex].text.trim() : '';
 
       closeModal();
-      showToast(`🎉 Thank you, ${name}! Redirecting to WhatsApp to confirm your ${service}...`);
+      showToast(`🎉 Thank you, ${name}! Redirecting to WhatsApp to send your inquiry...`);
 
-      const text = encodeURIComponent(`Hello Lady T Cleaning Services,\n\nI would like to book a cleaning service.\n- Name: ${name}\n- Phone: ${phone}\n- Area: ${area}\n- Service: ${service}${notes ? `\n- Notes: ${notes}` : ''}`);
+      const text = `*NEW INQUIRY - LADY T'S CLEANING SERVICES*\n\n` +
+        `👤 *Full Name:* ${name}\n` +
+        `📞 *Phone / WhatsApp:* ${phone}\n` +
+        `📍 *Location / Area:* ${area}\n` +
+        `🧹 *Service Required:* ${service}` +
+        (date ? `\n📅 *Preferred Date:* ${date}` : '') +
+        (time && time !== 'Preferred Time Window' ? `\n⏰ *Time Window:* ${time}` : '') +
+        (notes ? `\n📝 *Details / Notes:* ${notes}` : '') +
+        `\n\nSent from Lady T's website (Instant Quote & Booking)`;
+
+      const url = `https://wa.me/2347038750117?text=${encodeURIComponent(text)}`;
+
       setTimeout(() => {
-        const url = `https://wa.me/2347038750117?text=${text}`;
         const win = window.open(url, '_blank');
         if (!win || win.closed || typeof win.closed === 'undefined') {
           window.location.href = url;
         }
-      }, 500);
+      }, 400);
+
       form.reset();
     });
   }

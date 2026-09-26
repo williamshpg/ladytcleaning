@@ -1145,101 +1145,55 @@
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
 
       <div class="modal-header">
-        <div class="modal-icon">✨</div>
-        <h3 class="modal-title">Book Lady T's Cleaning Service</h3>
-        <p class="modal-sub">Serving Benin City & Edo State with spotless excellence. Fill out the form or chat with us
-          on WhatsApp.</p>
+        <div class="section-tag">Instant Reservation</div>
+        <h3>Book Your Cleaning Service</h3>
+        <p>Direct priority booking with Lady T's Cleaning Services in Benin City.</p>
       </div>
 
-      <form id="booking-form" class="booking-form">
-        <div class="form-row-2">
-          <div class="form-field">
-            <label for="book-name">Full Name *</label>
-            <input type="text" id="book-name" required placeholder="e.g. Osas Ighodaro">
-          </div>
-          <div class="form-field">
-            <label for="book-phone">Phone Number (Call/WhatsApp) *</label>
-            <input type="tel" id="book-phone" required placeholder="e.g. 0703 875 0117" inputmode="tel"
-              autocomplete="tel">
-          </div>
+      <form id="booking-form" class="booking-modal-form">
+        <div class="form-group">
+          <label for="bm-name">Full Name *</label>
+          <input type="text" id="bm-name" required placeholder="e.g. Osasogie Ighodaro">
         </div>
 
         <div class="form-row-2">
-          <div class="form-field">
-            <label for="book-email">Email Address *</label>
-            <input type="email" id="book-email" required placeholder="name@example.com">
+          <div class="form-group">
+            <label for="bm-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="bm-phone" required inputmode="tel" autocomplete="tel" placeholder="e.g. 0703 875 0117">
           </div>
-          <div class="form-field">
-            <label for="book-service">Requested Service</label>
-            <select id="book-service">
-              <option value="residential">Residential Cleaning</option>
-              <option value="deepclean">Deep Cleaning & Refresh</option>
-              <option value="moveinout">Move In / Move Out Clean</option>
-              <option value="commercial">Commercial & Office Cleaning</option>
-              <option value="carpet">Carpet & Upholstery Extraction</option>
-              <option value="postconstruction">Post-Construction Detailing</option>
-              <option value="fumigation">Fumigation & Pest Control</option>
-            </select>
+          <div class="form-group">
+            <label for="bm-area">Location / Area in Benin City *</label>
+            <input type="text" id="bm-area" required placeholder="e.g. Amagba, GRA, Airport Rd">
           </div>
         </div>
 
-        <div class="form-row-2">
-          <div class="form-field">
-            <label for="book-date">Preferred Date *</label>
-            <input type="date" id="book-date" required>
-          </div>
-          <div class="form-field">
-            <label for="book-time">Preferred Time Window</label>
-            <select id="book-time">
-              <option value="morning">Morning (8:00 AM - 11:30 AM)</option>
-              <option value="afternoon">Afternoon (12:00 PM - 3:30 PM)</option>
-              <option value="evening">Late Afternoon / Evening</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label for="bm-service">Service Required *</label>
+          <select id="bm-service" required>
+            <option value="Residential Home Cleaning">Residential Home Cleaning</option>
+            <option value="Commercial & Office Janitorial">Commercial & Office Janitorial</option>
+            <option value="Deep Clean & Move-In/Out">Deep Clean & Move-In / Move-Out</option>
+            <option value="Carpet & Upholstery Extraction">Carpet & Upholstery Steam Extraction</option>
+            <option value="Post-Construction Detailing">Post-Construction Detailing</option>
+            <option value="Fumigation & Pest Control">Fumigation & Pest Control Services</option>
+            <option value="Other Custom Request">Other Custom Request</option>
+          </select>
         </div>
 
-        <div class="form-field">
-          <label for="book-address">Address & Area in Benin City *</label>
-          <input type="text" id="book-address" required placeholder="e.g. Off Amagba Road, GRA, Benin City">
-        </div>
-
-        <div class="form-field">
-          <label for="book-notes">Special Requests / Access Notes (Optional)</label>
-          <textarea id="book-notes" rows="2"
-            placeholder="e.g. Gate pass required at estate security, special care for marble tiles, etc."></textarea>
-        </div>
-
-        <div class="booking-estimate-preview" id="modal-estimate-preview">
-          <span>Lady T Guarantee:</span>
-          <strong>100% Sparkle Satisfaction</strong>
-          <span class="guarantee-tag">✓ Free 24-Hr Re-Clean</span>
+        <div class="form-group">
+          <label for="bm-notes">Details / Notes About Your Space</label>
+          <textarea id="bm-notes" rows="2" placeholder="Tell us about the property: e.g. 4-bedroom duplex, pet-friendly cleaning, marble floor care"></textarea>
         </div>
 
         <div class="form-turnaround-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-          </svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
           <span>Usually responds in 15 minutes or less via WhatsApp</span>
         </div>
 
         <button type="submit" class="btn btn-primary-gradient btn-block btn-lg">
-          <span>Confirm Booking Request</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
+          <span>Send Inquiry to Lady T via WhatsApp</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.43 0 .07 5.37.07 11.97c0 2.11.55 4.17 1.6 5.99L0 24l6.21-1.63a11.92 11.92 0 0 0 5.83 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.5-8.43zM12.05 21.88h-.01a9.92 9.92 0 0 1-5.06-1.39l-.36-.22-3.76.99 1-3.66-.24-.38a9.94 9.94 0 0 1-1.52-5.25c0-5.5 4.47-9.97 9.98-9.97 2.66 0 5.17 1.04 7.05 2.92a9.93 9.93 0 0 1 2.92 7.05c0 5.5-4.47 9.98-9.97 9.98zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
         </button>
-
-        <div style="text-align: center; margin-top: 14px;">
-          <a href="https://wa.me/2347038750117?text=Hello%20Lady%20T%20Cleaning%2C%20I%20would%20like%20to%20book%20a%20clean."
-            target="_blank" rel="noopener"
-            style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 700; color: #25D366; text-decoration: none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.43 0 .07 5.37.07 11.97c0 2.11.55 4.17 1.6 5.99L0 24l6.21-1.63a11.92 11.92 0 0 0 5.83 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.5-8.43zM12.05 21.88h-.01a9.92 9.92 0 0 1-5.06-1.39l-.36-.22-3.76.99 1-3.66-.24-.38a9.94 9.94 0 0 1-1.52-5.25c0-5.5 4.47-9.97 9.98-9.97 2.66 0 5.17 1.04 7.05 2.92a9.93 9.93 0 0 1 2.92 7.05c0 5.5-4.47 9.98-9.97 9.98zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" />
-            </svg>
-            <span>Or message us directly on WhatsApp (0703 875 0117)</span>
-          </a>
-        </div>
       </form>
     </div>
   </div>
